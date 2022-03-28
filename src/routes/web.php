@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthenticationController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ContactController;
 
-Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/login', [AuthenticationController::class, 'login']);
-Route::post('/logout', [AuthenticationController::class, 'logout']);
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+Route::post('/contacts', [ContactController::class, 'store']);
